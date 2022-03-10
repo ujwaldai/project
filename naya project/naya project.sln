@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "naya project", "naya project\naya project.csproj", "{E9EE176B-2B3E-4102-9E4D-F4F086CCD8FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9EE176B-2B3E-4102-9E4D-F4F086CCD8FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9EE176B-2B3E-4102-9E4D-F4F086CCD8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9EE176B-2B3E-4102-9E4D-F4F086CCD8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9EE176B-2B3E-4102-9E4D-F4F086CCD8FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE148B88-1C2E-475F-9BCB-2C7FCD58DF5E}
+	EndGlobalSection
+EndGlobal
