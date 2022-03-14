@@ -4,18 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using naya_project.Models;
+
 namespace naya_project.Controllers
 {
-    public class ujwalController : Controller
+    public class arkoController : Controller
     {
+
         daiEntities1 db = new daiEntities1();
-
-        // GET: ujwal
-        public ActionResult Index()
+        // GET: arko
+        public ActionResult nayaa()
         {
-
-            List<employee> all_data = db.employees.ToList();
-            return View(all_data);
+            List<student> all_data = db.students.ToList();
+            return View(all_data );
         }
         public ActionResult create()
         {

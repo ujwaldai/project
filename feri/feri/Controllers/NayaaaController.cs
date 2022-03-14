@@ -27,14 +27,17 @@ namespace feri.Controllers
             db.SaveChanges();
             return RedirectToAction("employee");
         }
-        public ActionResult Edit(employee tbl_employee)
+        public ActionResult Edit(int id)
         {
-            employee old_data = db.employees.Find(tbl_employee.id);
-            old_data.name = tbl_employee.name;
-            old_data.address = tbl_employee.address;
-            db.Entry(old_data).State = System.Data.Entity.EntityState.Modified;
+            employee data=db.employees.Find(id);
+            return View(data);
+        }
+        public ActionResult EditData(employee tbl_employee)
+        {
+            
+            db.Entry(tbl_employee).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("create");
+            return RedirectToAction("employee");
            
    
         }

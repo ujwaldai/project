@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="daiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="daiEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="employees" EntityType="daiModel.employee" />
+    <EntitySet Name="students" EntityType="daiModel.student" />
+  </EntityContainer>
   <EntityType Name="employee">
     <Key>
       <PropertyRef Name="id" />
@@ -8,7 +12,12 @@
     <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityContainer Name="daiEntities1" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="employees" EntityType="Self.employee" />
-  </EntityContainer>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="sid" />
+    </Key>
+    <Property Name="sid" Type="Int32" Nullable="false" />
+    <Property Name="sname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="saddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

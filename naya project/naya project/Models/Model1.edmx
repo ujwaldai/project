@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="daiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="daiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="employee">
           <Key>
             <PropertyRef Name="id" />
@@ -13,14 +13,26 @@
           <Property Name="name" Type="varchar" MaxLength="20" />
           <Property Name="address" Type="varchar" MaxLength="20" />
         </EntityType>
+        <EntityType Name="student">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="int" Nullable="false" />
+          <Property Name="sname" Type="varchar" MaxLength="20" />
+          <Property Name="saddress" Type="varchar" MaxLength="20" />
+        </EntityType>
         <EntityContainer Name="daiModelStoreContainer">
           <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="daiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="daiEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="employees" EntityType="daiModel.employee" />
+          <EntitySet Name="students" EntityType="daiModel.student" />
+        </EntityContainer>
         <EntityType Name="employee">
           <Key>
             <PropertyRef Name="id" />
@@ -29,9 +41,14 @@
           <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="daiEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="employees" EntityType="Self.employee" />
-        </EntityContainer>
+        <EntityType Name="student">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="Int32" Nullable="false" />
+          <Property Name="sname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="saddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -41,9 +58,18 @@
           <EntitySetMapping Name="employees">
             <EntityTypeMapping TypeName="daiModel.employee">
               <MappingFragment StoreEntitySet="employee">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="students">
+            <EntityTypeMapping TypeName="daiModel.student">
+              <MappingFragment StoreEntitySet="student">
+                <ScalarProperty Name="saddress" ColumnName="saddress" />
+                <ScalarProperty Name="sname" ColumnName="sname" />
+                <ScalarProperty Name="sid" ColumnName="sid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

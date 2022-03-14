@@ -1,0 +1,24 @@
+﻿@model List<naya_project.Models.student>
+@{
+    ViewBag.Title = "nayaa";
+    int sn=0;
+}
+
+<h2>nayaa</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>ADDRESS</th>
+    </tr>
+
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>@(++sn))</td>
+            <td>@(data.sname)</td>
+            <td>@(data.saddress)</td>
+        </tr>
+    }
+</table>
+

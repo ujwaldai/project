@@ -8,7 +8,16 @@
     <Property Name="name" Type="varchar" MaxLength="20" />
     <Property Name="address" Type="varchar" MaxLength="20" />
   </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="sid" />
+    </Key>
+    <Property Name="sid" Type="int" Nullable="false" />
+    <Property Name="sname" Type="varchar" MaxLength="20" />
+    <Property Name="saddress" Type="varchar" MaxLength="20" />
+  </EntityType>
   <EntityContainer Name="daiModelStoreContainer">
     <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>
