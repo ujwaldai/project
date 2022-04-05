@@ -1,5 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="daiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="20" />
+    <Property Name="address" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="employee_salary_Details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="employee_id" Type="int" />
+    <Property Name="salary_paid" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="paid_date" Type="date" />
+  </EntityType>
   <EntityType Name="student">
     <Key>
       <PropertyRef Name="sid" />
@@ -9,6 +26,8 @@
     <Property Name="saddress" Type="varchar" MaxLength="20" />
   </EntityType>
   <EntityContainer Name="daiModelStoreContainer">
+    <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="employee_salary_Details" EntityType="Self.employee_salary_Details" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

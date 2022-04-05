@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://127.0.0.1:5500/validation.html? -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span
+        {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <fieldset style="background-color: rgb(191, 191, 194);border-color: crimson;">
+        <h2 style="margin-left: 45%; font-family: &#39;Franklin Gothic Medium&#39;, &#39;Arial Narrow&#39;, Arial, sans-serif;color: darkred;">SignUp</h2>
+        <form onsubmit="validation()">
+            <label style="font-size: 20px; color: rgb(165, 16, 46);">Name:</label>
+            <input style="margin-left: 28px; height: 29px; width: 200px; border-radius: 7px; background-color: rgb(17, 14, 14);" type="text" id="name" placeholder="Enter Full Name"><span id="nameMessage"></span>
+            <br>
+            <br>
+            <br>
+            <label style="font-size: 20px;color:rgb(165, 16, 46) ;">Email:</label>
+            <input style="margin-left: 29px;height: 29px; width: 200px;border-radius: 7px; background-color: rgb(17, 14, 14);" type="text" id="Email" placeholder="Enter your email"><span id="emailMessage"></span>
+            <br>
+            <br>
+            <br>
+            <label style="font-size: 20px;color:rgb(165, 16, 46) ;">Password:</label>
+            <input style="height: 29px; width: 200px;border-radius: 7px; background-color: rgb(17, 14, 14);" type="text" id="pass" placeholder="Enter your password"><span id="passwordMessage"></span>
+            <br>
+            <br>
+            <button style="font-size: 20px;background-color:rgb(12, 11, 10); " type="submit">Submit</button>
+
+        </form>
+    </fieldset>
+    <script>
+    function validation()
+    {
+        var namee=document.getElementById('name').value;
+        if( namee=="")
+        {
+          document.getElementById("nameMessage").innerHTML="Name cannot be empty!!!"
+        }
+        var emaill=document.getElementById("Email").value;
+       
+
+        var validemail=/^[a-zA-Z0-9.!#$%%&*+/=?^_-{|}~]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if(emaill.match(validemail)){
+        }
+        else{
+            document.getElementById("emailMessage").innerHTML="Email format is wrong!!!s"
+        }
+
+
+        var pass=document.getElementById("pass").value;
+        var validpass=/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+        if(pass.match(validpass)){
+            
+        }
+        else{
+            document.getElementById("passwordMessage").innerHTML="Invalid password!!!"
+        }
+    }
+    </script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>

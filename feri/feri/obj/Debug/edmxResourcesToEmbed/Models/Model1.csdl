@@ -10,5 +10,24 @@
   </EntityType>
   <EntityContainer Name="daiEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="students" EntityType="Self.student" />
+    <EntitySet Name="employees" EntityType="daiModel.employee" />
+    <EntitySet Name="employee_salary_Details" EntityType="daiModel.employee_salary_Details" />
   </EntityContainer>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="employee_salary_Details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="employee_id" Type="Int32" />
+    <Property Name="salary_paid" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="paid_date" Type="DateTime" Precision="0" />
+  </EntityType>
 </Schema>

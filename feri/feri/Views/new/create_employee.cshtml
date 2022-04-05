@@ -1,0 +1,30 @@
+﻿@model List<feri.Models.employee1>
+@{
+    ViewBag.Title = "create_employee";
+}
+
+<h2>create_employee</h2>
+<form action="SaveData">
+    <br />
+    <label class="col-md-2">ID</label>
+    <div class="col-md-4">
+        <input type="text" name="employee_id" class="form-control" />
+    </div>
+    <label class="col-md-2">Name</label>
+    <div class="col-md-4">
+        <input type="text" name="emp_name" class="form-control" />
+    </div>
+    <br />
+    <br /><br />
+    <label class="col-md-2">Address</label>
+    <div class="col-md-4">
+        <input type="text" name="emp_address" class="form-control" />
+    </div>
+    <br /><br /><br />
+
+
+    <div class="col-md-4">
+        <input type="Submit" name="Save" value="submit" />
+    </div>
+
+</form>

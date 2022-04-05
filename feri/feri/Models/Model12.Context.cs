@@ -26,5 +26,7 @@ namespace feri.Models
         }
     
         public virtual DbSet<employee> employees { get; set; }
+        public virtual DbSet<employee_salary_Details> employee_salary_Details { get; set; }
+        public virtual DbSet<employee1> employees1 { get; set; }
     }
 }

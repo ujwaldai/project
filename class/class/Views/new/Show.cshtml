@@ -1,0 +1,28 @@
+﻿@model List<class.Models.employee>
+@{
+    ViewBag.Title = "show";
+    int sn = 0;
+}
+
+<h2>employee</h2>
+
+<table border="1">
+
+    <tr>
+        <th>SN</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Edit</th>
+
+    </tr>
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>@(++sn)</td>
+            <td>@(data.name)</td>
+            <td>@(data.address)</td>
+            <td> <a href="@Url.Action("edit", new { id = data.id })"> Edit</a>  </td>
+
+        </tr>
+    }
+</table>

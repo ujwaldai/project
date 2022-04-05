@@ -8,7 +8,42 @@
     <Property Name="name" Type="varchar" MaxLength="20" />
     <Property Name="address" Type="varchar" MaxLength="20" />
   </EntityType>
+  <EntityType Name="employee_salary_Details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="employee_id" Type="int" />
+    <Property Name="salary_paid" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="paid_date" Type="date" />
+  </EntityType>
+  <EntityType Name="employees">
+    <Key>
+      <PropertyRef Name="employee_id" />
+    </Key>
+    <Property Name="employee_id" Type="int" Nullable="false" />
+    <Property Name="emp_name" Type="varchar" MaxLength="20" />
+    <Property Name="emp_address" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="empid">
+    <End Role="employees" Type="Self.employees" Multiplicity="0..1" />
+    <End Role="employee_salary_Details" Type="Self.employee_salary_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employees">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="employee_salary_Details">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="daiModel1StoreContainer">
     <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="employee_salary_Details" EntityType="Self.employee_salary_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="employees" EntityType="Self.employees" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="empid" Association="Self.empid">
+      <End Role="employees" EntitySet="employees" />
+      <End Role="employee_salary_Details" EntitySet="employee_salary_Details" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

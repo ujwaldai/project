@@ -130,10 +130,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NayaaaController.cs" />
+    <Compile Include="Controllers\newController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\employee.cs">
+      <DependentUpon>Model12.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\employee1.cs">
+      <DependentUpon>Model12.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\employee_salary_Details.cs">
       <DependentUpon>Model12.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Designer.cs">
@@ -221,6 +228,8 @@
     <Content Include="Views\Nayaaa\create.cshtml" />
     <Content Include="Views\Nayaaa\employee.cshtml" />
     <Content Include="Views\Nayaaa\edit.cshtml" />
+    <Content Include="Views\new\ShowDetails.cshtml" />
+    <Content Include="Views\new\create_employee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

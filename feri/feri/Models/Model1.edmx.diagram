@@ -4,6 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
+      <Diagram DiagramId="d9fd011b3cec4155b45b18e9f217fa1a" Name="Diagram1">
+        <EntityTypeShape EntityType="daiModel.student" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="daiModel.employee" Width="1.5" PointX="5.875" PointY="1.25" />
+        <EntityTypeShape EntityType="daiModel.employee_salary_Details" Width="1.5" PointX="2.875" PointY="4.25" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

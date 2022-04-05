@@ -1,0 +1,31 @@
+﻿@model List<feri.Models.employee1>
+@{
+    ViewBag.Title = "ShowDetails";
+    
+}
+
+<h2>ShowDetails</h2>
+
+<h2>employee</h2>
+
+<table border="1" class="table">
+
+    <tr>
+       
+        <th>Employee_id</th>
+        <th>Emp_name</th>
+        <th>Emp_address</th>
+        <th>Edit</th>
+
+    </tr>
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>@(data.employee_id)</td>
+            <td>@(data.emp_name)</td>
+            <td>@(data.emp_address)</td>
+            <td> <a href="@Url.Action("edit", new { id = data.employee_id })"> Edit</a> </td>
+
+        </tr>
+    }
+</table>

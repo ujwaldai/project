@@ -1,0 +1,3 @@
+D:\ujwal dai ko file\class\class\obj\Debug\work.csproj.CoreCompileInputs.cache
+D:\ujwal dai ko file\class\class\obj\Debug\@class.dll
+D:\ujwal dai ko file\class\class\obj\Debug\@class.pdb

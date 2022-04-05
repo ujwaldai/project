@@ -6,6 +6,9 @@
     <edmx:Diagrams>
       <Diagram DiagramId="c0275e30b59641af9fc6257a68342cb1" Name="Diagram1">
         <EntityTypeShape EntityType="daiModel1.employee" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="daiModel1.employee_salary_Details" Width="1.5" PointX="5.625" PointY="0.875" />
+        <EntityTypeShape EntityType="daiModel1.employee1" Width="1.5" PointX="3.375" PointY="1" />
+        <AssociationConnector Association="daiModel1.empid" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

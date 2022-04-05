@@ -1,0 +1,25 @@
+﻿@model kina.Models.salary_details
+@{
+    ViewBag.Title = "delete";
+}
+
+<h2>delete</h2>
+<h1>Create</h1>
+
+@using (Html.BeginForm("Deletedata", null))
+{
+    <input type="hidden" name="e_id" class="form-control" value="@(Model.e_id)" />
+    <label class="col-md-2">Name</label>
+    <div class="col-md-4">
+        <input type="text" name="e_name" class="form-control" value="@(Model.e_name)" />
+    </div>
+    <br />
+    <label class="col-md-2">Salary</label>
+    <div class="col-md-4">
+        <input type="text" name="salary" class="form-control" value="@(Model.salary)" />
+    </div>
+    <br />
+    <div class="col-md-4">
+        <input type="submit" name="save" value="submit" />
+    </div>}
+
